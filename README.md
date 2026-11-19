@@ -171,7 +171,7 @@ steps and for what it does and does not prove.
 - **`WalletBar`**: Wallet connection status, address, network validation, the Freighter / Albedo / xBull connector picker, and the multi-guard switcher (saved per network, add-by-address verified with a live `status()` read, rename, and confirm-gated delete).
 - **`FleetTable`**: Live per-instance status across every registered guard account.
 - **`TxHistoryTable`** / **`MultisigTracker`**: The locally recorded submission history and pending multisig approvals.
-- **`SubmitSignedXDRPanel`**: Imports and broadcasts an externally signed transaction envelope for multisig or air-gapped signing.
+- **`SubmitSignedXDRPanel`**: Imports and broadcasts an externally signed transaction envelope for multisig or air-gapped signing. The review shows the envelope's network identity (selected network, network ID, the network the signature verifies on, the transaction hash) and the decoded operations, refuses a network mismatch before submit, and broadcasts only the exact bytes that were checked.
 - **`CommandPalette`** (`Cmd`/`Ctrl`+`K`): Keyboard-navigable navigation, guard-instance search, and quick actions.
 - **`ThemeToggle`**: Dark / light / high-contrast themes, following the OS preference until the operator chooses.
 - **`AddressBookModal`** / **`MigrationWizard`**: Saved recipients — nicknames and imported names are screened against a documented label policy that rejects invisible and control characters with a field-level error while preserving international text — and a guided policy-migration flow.
