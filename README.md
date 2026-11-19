@@ -145,6 +145,7 @@ steps and for what it does and does not prove.
   - Keep the configured network name and RPC hostname visible beside the page title; switching controls remain in the wallet bar.
   - Deploy fresh guard accounts from verified on-chain WASM bytecode.
   - Follow the **post-deploy checklist** (`SetupWizard`): deploy → initialize → install policy → verify, each step derived from a live read, dismissible, and reopenable, with a read-only retry whenever a read fails.
+  - Run the **first-read checks** in the checklist before deploying: the RPC endpoint, the connected wallet and the admin account are each confirmed by a read-only check with its own outcome. None asks for a signature, and a missing wallet is reported as skipped, so observing is never blocked.
   - Configure spending policy parameters with real-time validation.
   - Sign and submit `set_policy` transactions.
   - Show the same default-deny banner while nothing is installed, and disable the revoke action — the state it would produce is already in force.
